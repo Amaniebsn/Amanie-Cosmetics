@@ -61,7 +61,6 @@ class CartController extends AbstractController
     #[Route('/cart/decrease/{id}', name:"decrease_to_cart")]
     public function decrease(Cart $cart, $id)
     {
-        dump($id);
         $cart->decrease($id);
 
         return $this->redirectToRoute('cart');
