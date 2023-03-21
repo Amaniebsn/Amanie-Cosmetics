@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product.name }}- Amanie Cosmetics{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+    
+    <div class="row">
+        <div class="col-md-5">
+            <img src="{{ asset('assets/pictures/' ~ product.illustration) }}" height="150px" class="img-fluid" alt="{{ product.name }}">
+        </div>
+        <div class="col-md-7 my-auto">
+        <h3> {{ product.name }} </h3>
+        <p>{{ product.subtitle}} </p>
+        <span class="product-page-price"> {{ ( product.price / 100 ) | number_format(2, ',', '.')}} €</span>
+        <hr>
+        <p>{{ product.description}}</p>
+        <a href="{{ path('add_to_cart', {'id' : product.id }) }}" class="btn btn-primary">Ajouter au panier</a>
+
+    </div>
+    </div>
+          
+    </div>    
+{% endblock %}

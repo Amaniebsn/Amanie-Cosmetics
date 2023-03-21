@@ -1,0 +1,164 @@
+body {
+    margin: 0;
+  }
+  
+  .no-css-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .container-pub {
+    width: 100%;
+    height: 1500px;
+    background-image: url('../../assets/pictures/couverture.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 70%;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .title {
+   color: white;
+   font-size: 2.6em;
+  }
+  
+  .textcolor {
+      color: #f5b65d;
+      text-align:center ;
+      width: 350px;
+      height: auto;
+      position: absolute;
+      left: 50%;
+      top: 150%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);        
+  }
+
+
+
+  .nav {
+    background-color: #f5b65d;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .container-start {
+    margin-top: 1%;
+    width: 100%;
+    height: 580px;
+    background-image: url('../../assets/pictures/fond.jpeg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    
+   
+  }
+.title2 {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+.brand {
+    font-size: 1.5em;
+    text-align: start;
+    color: white;
+   
+}
+
+
+.back {
+  background-color: #f5b65d;
+}
+
+.introduce
+{
+    text-align: left;
+    color: white;
+    font-size: 1.9em;
+    
+}
+.intro2
+{
+    text-align: left;
+    color: white;
+    font-size: 1.4;
+    
+}
+.left {
+    text-align: left;
+    width: 20em;
+    display: flex;
+    width: 70%;
+    color: white;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container-pack {
+    margin-top: 3%;
+    margin-left: 8%;
+    width: 80%;
+    height: 500px;
+    background-image: url('../../assets/pictures/colors.jpeg');
+    border-radius: 8px;
+    background-position: center;
+    background-size: cover;
+    display: center;
+     
+    
+}
+
+.hight
+{
+    color: white;
+    font-size: 5em;
+    text-align: center;
+}
+.col-auto
+{
+  text-align: center;
+}
+
+.layout__footer {
+  background: #f5b65d;
+}
+.site-footer {
+  background: #f5b65d;
+}
+.lip {
+  margin-top: 3em;
+  margin-left: 1em;
+}
+
+.footer {
+  background-color: white;
+  margin-top: 3em;
+  text-align: center;
+}
+
+.sign {
+  font-size: 1.5em;
+}
+.logo
+{
+  margin-left:84.4em;
+}
+

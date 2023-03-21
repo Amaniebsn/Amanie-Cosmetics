@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Valider ma commande - Amanie Cosmetics {% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<h2>Je passe ma commande</h2>
+<p>Choisissez votre préférence avant de passer commande sur Amanie Cosmetics.</p>
+<hr>
+<div class="row">
+    <div class="col-md-6">
+         <b>Choisir mon adresse de livraison</b>
+
+         {% set formHtml %}
+              {{ form_start (form, {action:path ('order_recap')}) }}
+                 {{ form_label (form.addresses, 'Choose your delivery address') }}
+               <a href="{{ ('app_account_adress_address') }}"> Ajouter une nouvelle adresse</a>
+              {{ form_end (form) }}
+         {% endset %}
+         {{ formHtml|replace({'[br]' : '<br/>'}|raw ) }}
+
+         <b>Choisir mon transporteur</b>
+    </div>
+    <div class="col-md-6">
+    <div class="text-center">
+         <b>Récap de ma commande</b>
+         <p>Retrouve ta commande</p>
+    </div>
+         <div class="order-summary">
+          {% for key,product in cart %}
+            <div class="row {% if key > 0 %}mt-2 {% endif %} ">
+                 <div class="col-2">
+                 <img src="/uploads/{{ product.product.illustration }}" alt="{{ product.product.name }}" height="70px">
+                 </div>
+
+                <div class="col-8 my-auto">
+                {{ product.product.name }}<br/>
+                <small>{{ product.product.subtitle }}</small>
+                </div>
+
+                 <div class="col-2 my-auto"> 
+                 x {{ product.quantity }}
+                 </div>
+            </div>
+        {% endfor %}
+         </div>
+    </div>
+</div>
+
+{% endblock %}

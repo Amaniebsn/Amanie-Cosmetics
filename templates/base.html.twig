@@ -1,19 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="fr">
     <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{% block title %}AmanieCosmetics !{% endblock %}</title>
+        <meta name="robots" content="noindex, follow" />
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+        crossorigin="anonymous">
+
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
+            <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/cosmetics.css') }}">
+
         {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
     </head>
-    <body>
+    <body class="back">
+       <nav>
+            <p class="nav"> Livraison gratuite dès 60€ d'achats</p>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">AmanieCosmetics</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('home') }}">Accueil</a>
+                    </li>
+                    {% if app.user == false %}
+                        
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('products')}}">Produits</a>
+                    </li>
+                     {% if app.user %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('account') }}"> Mon Compte <small>({{ app.user.firstname }}) </small></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_logout') }}"> Déconnexion </a>
+                        </li>
+                     {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_login') }}"> Connexion </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('register') }}">Inscription</a>
+                        </li>
+                     {% endif %}
+                     <li class="nav-item">
+                        <a href="{{ path ('cart') }}">
+                            <img src="{{ asset('assets/pictures/panier.png') }}" class="cart-icon" height="30px" width="30px" alt="My cart">
+                        </a>
+                    </li>
+                </ul>
+                    
+                
+            </div>
+            
+        </nav>
         {% block body %}{% endblock %}
+
+        <footer class="footer">
+            <p class="sign"> Inscrivez vous dès maintenant:</p>
+            <p><label for="exampleInputEmail1" class="form-label">Adresse e-mail</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"></p>
+            <p><button type="submit" class="btn btn-light">Soumettre</button></p>
+            <p><img src="{{ asset('assets/pictures/ig.png') }}" width="50" height="50"/> amanie cosmetics</p>
+            <div class="logo">
+                <img src="{{ asset('assets/pictures/logo.png') }}" width="60" height="60"/>
+            </div>
+        </footer>
+
+
     </body>
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+    
 </html>

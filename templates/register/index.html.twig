@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+  
+
+{% block body %}
+
+{% if notification %}
+     <div class="alert alert-info">{{ notification }}</div>
+{% endif %}
+<hr>
+{{form(form)}}
+
+ {% endblock %}
