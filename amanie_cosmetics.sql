@@ -11,7 +11,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `amanie_cosmetics`
 --
-
+CREATE SCHEMA IF NOT EXISTS amanie_cosmetics;
+USE amanie_cosmetics;
 -- --------------------------------------------------------
 
 --
